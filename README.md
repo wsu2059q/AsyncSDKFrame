@@ -8,6 +8,7 @@ ErisPulse 是一个模块化、可扩展的异步 Python SDK 框架，主要用�
 
 ```bash
 pip install ErisPulse
+```
 
 ## 开发指南
 
