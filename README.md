@@ -12,7 +12,7 @@ pip install ErisPulse
 
 ## 开发指南
 
-项目的模块化设计允许开发者通过实现符合规范的模块快速扩展功能。模块的结构和接口规范可以参考 [异步模块开发指南](https://github.com/wsu2059q/AsyncRyhBotPythonSDK2/blob/main/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md)。
+项目的模块化设计允许开发者通过实现符合规范的模块快速扩展功能。模块的结构和接口规范可以参考 [开发指南](https://github.com/wsu2059q/ErisPulse/blob/main/%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md)。
 
 ### CLI命令介绍
 
