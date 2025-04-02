@@ -333,7 +333,7 @@ def list_modules(module_name=None, page_size=5):
             print("\n")
             sys.exit(0)
 def main():
-    parser = argparse.ArgumentParser(description="AsyncRyhBotPythonSDK2 CLI")
+    parser = argparse.ArgumentParser(description="ErisPulse CLI")
     subparsers = parser.add_subparsers(dest='command', help='可用命令')
 
     enable_parser = subparsers.add_parser('enable', help='启用指定模块')

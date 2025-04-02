@@ -1,4 +1,4 @@
-# AsyncSDKFrame
+# ErisPulse
 
 本项目基于 [RyhBotPythonSDK V2](https://github.com/runoneall/RyhBotPythonSDK2) 构建，并由 [sdkFrame](https://github.com/runoneall/sdkFrame) 提供支持。这是一个异步版本的 SDK，可能在功能和特性上与原库存在一定差异。
 
@@ -6,12 +6,12 @@
 
 ## 项目概述
 
-AsyncSDKFrame 是一个模块化、可扩展的异步 Python SDK 框架，主要用于构建高效、可维护的机器人应用程序。
+ErisPulse 是一个模块化、可扩展的异步 Python SDK 框架，主要用于构建高效、可维护的机器人应用程序。
 
 ## 项目结构
 
 ```
-AsyncSDKFrame/
+ErisPulse/
 ├── __init__.py        # 项目初始化
 ├── __main__.py        # CLI 接口
 ├── envManager.py      # 环境配置管理
@@ -39,70 +39,70 @@ AsyncSDKFrame/
 ## 使用说明
 
 1. 安装依赖：`pip install -r requirements.txt`
-2. 查看可用CLI命令：`python -m AsyncSDKFrame`
+2. 查看可用CLI命令：`python -m ErisPulse`
 
 ### CLI命令介绍
 
-`AsyncSDKFrame` 提供了丰富的 CLI 命令，用于管理模块、源和环境配置。以下是主要的 CLI 命令及其功能：
+`ErisPulse` 提供了丰富的 CLI 命令，用于管理模块、源和环境配置。以下是主要的 CLI 命令及其功能：
 
 1. **启用模块**
    ```bash
-   python -m AsyncSDKFrame enable <module_name>
+   python -m ErisPulse enable <module_name>
    ```
    启用指定模块。
 
 2. **禁用模块**
    ```bash
-   python -m AsyncSDKFrame disable <module_name>
+   python -m ErisPulse disable <module_name>
    ```
    禁用指定模块。
 
 3. **列出模块**
    ```bash
-   python -m AsyncSDKFrame list [--module <module_name>]
+   python -m ErisPulse list [--module <module_name>]
    ```
    列出所有模块信息，或指定模块的详细信息。
 
 4. **更新模块列表**
    ```bash
-   python -m AsyncSDKFrame update
+   python -m ErisPulse update
    ```
    更新模块列表，从已配置的源中获取最新的模块信息。
 
 5. **升级模块**
    ```bash
-   python -m AsyncSDKFrame upgrade [--force]
+   python -m ErisPulse upgrade [--force]
    ```
    升级所有模块到最新版本，可选 `--force` 参数跳过二次确认。
 
 6. **卸载模块**
    ```bash
-   python -m AsyncSDKFrame uninstall <module_name>
+   python -m ErisPulse uninstall <module_name>
    ```
    删除指定模块。
 
 7. **安装模块**
    ```bash
-   python -m AsyncSDKFrame install <module_name> [--force] [--init]
+   python -m ErisPulse install <module_name> [--force] [--init]
    ```
    安装指定模块，支持多个模块（用逗号分隔）。可选 `--force` 参数强制重新安装，`--init` 参数在安装前初始化模块数据库。
 
 8. **管理模块源**
    - **添加模块源**
      ```bash
-     python -m AsyncSDKFrame origin add <url>
+     python -m ErisPulse origin add <url>
      ```
      添加新的模块源。
      
    - **列出模块源**
      ```bash
-     python -m AsyncSDKFrame origin list
+     python -m ErisPulse origin list
      ```
      列出所有已配置的模块源。
      
    - **删除模块源**
      ```bash
-     python -m AsyncSDKFrame origin del <url>
+     python -m ErisPulse origin del <url>
      ```
      删除指定的模块源。
 
@@ -127,13 +127,13 @@ AsyncSDKFrame/
 通过 `origin` 命令可以轻松管理这些模块源，例如添加、列出或删除源。例如：
 ```bash
 # 添加异步模块源
-python -m AsyncSDKFrame origin add https://sdkframe.anran.xyz/map.json
+python -m ErisPulse origin add https://sdkframe.anran.xyz/map.json
 
 # 添加同步模块源
-python -m AsyncSDKFrame origin add https://runoneall.serv00.net/ryhsdk2/map.json
+python -m ErisPulse origin add https://runoneall.serv00.net/ryhsdk2/map.json
 
 # 查看当前配置的模块源
-python -m AsyncSDKFrame origin list
+python -m ErisPulse origin list
 ```
 
 无论是异步还是同步模块源，都可以通过 `update` 命令更新模块列表，确保使用的是最新的模块信息。

@@ -39,7 +39,15 @@ def init():
                     continue
                 
                 module_info = env.get_module(moduleObj.moduleInfo["name"])
-                if not module_info or not module_info.get('status', True):
+                if module_info is None:
+                    module_info = {
+                        "status": True,
+                        "info": moduleObj.moduleInfo
+                    }
+                    env.set_module(moduleObj.moduleInfo["name"], module_info)
+                    logger.info(f"模块 {moduleObj.moduleInfo['name']} 信息已初始化并存储到数据库")
+                
+                if not module_info.get('status', True):
                     disabledModules.append(module_name)
                     logger.warning(f"模块 {moduleObj.moduleInfo['name']} 已禁用，跳过加载")
                     continue
@@ -99,14 +107,6 @@ def init():
             moduleInfo: dict = moduleObj.moduleInfo
 
             module_info = env.get_module(moduleInfo["name"])
-            if not module_info or not module_info.get('status', True):
-                env.set_module(moduleInfo["name"], {
-                    "status": False,
-                    "info": moduleInfo
-                })
-                logger.warning(f"模块 {moduleInfo['name']} 已禁用，跳过加载")
-                continue
-            
             env.set_module(moduleInfo["name"], {
                 "status": True,
                 "info": moduleInfo

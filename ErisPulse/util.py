@@ -27,4 +27,4 @@ def topological_sort(elements, dependencies, error):
 
 def ExecAsync(async_func, *args, **kwargs):
     loop = asyncio.get_event_loop()
-    loop.run_in_executor(executor, lambda: asyncio.run(async_func(*args, **kwargs)))
+    return loop.run_in_executor(executor, lambda: asyncio.run(async_func(*args, **kwargs)))

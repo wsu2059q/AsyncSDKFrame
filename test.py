@@ -1,6 +1,6 @@
 import json
 import asyncio
-from AsyncSDKFrame import sdk, logger
+from ErisPulse import sdk, logger
 async def echo_message():
     sdk.init()
     logger.info("test")
@@ -77,12 +77,14 @@ async def echo_message():
     #         pass
     async def run_servers():
         tasks = []
-        if hasattr(sdk, "AsyncServer"):
-            tasks.append(sdk.AsyncServer.Run())
-            sdk.AsyncServer.AddTrigger(sdk.NormalHandler)
-            sdk.AsyncServer.AddTrigger(sdk.CommandHandler)
-            sdk.AsyncServer.AddTrigger(sdk.LeaveGroupHandler)
-            sdk.AsyncServer.AddTrigger(sdk.JoinGroupHandler)
+        # if hasattr(sdk, "AsyncServer"):
+        #     tasks.append(sdk.AsyncServer.Run())
+        #     sdk.AsyncServer.AddTrigger(sdk.NormalHandler)
+        #     sdk.AsyncServer.AddTrigger(sdk.CommandHandler)
+        #     sdk.AsyncServer.AddTrigger(sdk.LeaveGroupHandler)
+        #     sdk.AsyncServer.AddTrigger(sdk.JoinGroupHandler)
+        if hasattr(sdk, "Server"):
+            tasks.append(sdk.Server.Start())
         if hasattr(sdk, "OneBotAdapter"):
             tasks.append(sdk.OneBotAdapter.Run())
             sdk.OneBotAdapter.AddTrigger(sdk.OneBotMessageHandler)
