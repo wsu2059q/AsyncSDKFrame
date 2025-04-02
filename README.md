@@ -1,62 +1,72 @@
-# ErisPulse
+# 🚀 ErisPulse - 异步机器人开发框架
 
-本项目基于 [RyhBotPythonSDK V2](https://github.com/runoneall/RyhBotPythonSDK2) 构建，并由 [sdkFrame](https://github.com/runoneall/sdkFrame) 提供支持。这是一个异步版本的 SDK，可能在功能和特性上与原库存在一定差异。
+基于 [RyhBotPythonSDK V2](https://github.com/runoneall/RyhBotPythonSDK2) 构建，由 [sdkFrame](https://github.com/runoneall/sdkFrame) 提供支持的异步机器人开发框架。
 
-ErisPulse 是一个模块化、可扩展的异步 Python SDK 框架，主要用于构建高效、可维护的机器人应用程序。
-
-## 安装本SDK
-
-```bash
-pip install ErisPulse
-```
-
-## 开发指南
-
-项目的模块化设计允许开发者通过实现符合规范的模块快速扩展功能。模块的结构和接口规范可以参考 [开发指南](https://github.com/wsu2059q/ErisPulse/blob/main/%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md)。
-
-### CLI命令介绍
-
-`ErisPulse` 提供了丰富的 CLI 命令，用于管理模块、源和环境配置。以下是主要命令：
-
-| 命令                          | 功能描述                           |
-|-------------------------------|------------------------------------|
-| `enable <module_name>`        | 启用指定模块                      |
-| `disable <module_name>`       | 禁用指定模块                      |
-| `list [--module <module_name>]` | 列出所有模块或指定模块的详细信息  |
-| `update`                      | 更新模块列表                      |
-| `upgrade [--force]`           | 升级所有模块到最新版本            |
-| `uninstall <module_name>`     | 删除指定模块                      |
-| `install <module_name>`       | 安装指定模块，支持多个模块         |
-
-#### 模块源管理命令
-
-| 命令                          | 功能描述                           |
-|-------------------------------|------------------------------------|
-| `origin add <url>`            | 添加新的模块源                    |
-| `origin list`                 | 列出所有已配置的模块源            |
-| `origin del <url>`            | 删除指定的模块源                  |
-
+## ✨ 核心特性
+- 完全异步架构设计
+- 模块化插件系统
+- 多协议支持
+- 模块热更新
+- 跨平台兼容
 
 ---
 
-### 模块源
+## 📦 安装
 
-在使用 `ErisPulse` 时，模块源是管理模块的重要组成部分。根据不同的使用场景，模块源分为两种类型：**异步模块源** 和 **同步模块源**。以下是它们的详细说明：
+```bash
+pip install ErisPulse --upgrade
+```
 
-#### 官方模块源
+**系统要求**：
+- Python ≥ 3.7
+- pip ≥ 20.0
 
-##### 包含所有模块的源
-- URL 1: (异步模块源) https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json
-- URL 2: (异步模块源) https://sdkframe.anran.xyz/map.json
-- URL 3: (同步模块源) https://runoneall.serv00.net/ryhsdk2/map.json
+---
 
-##### 仅包含需要平台的源
+## 🛠️ 开发工具
 
-- URL 1: (OneBot协议/异步模块源) https://sdkframe.anran.xyz/onebot.json
-- URL 2: (云 湖 平 台/异步模块源) https://sdkframe.anran.xyz/yunhu.json
+### CLI 命令大全
 
-#### 自定义模块源
-用户可以搭建自己的模块源，以下是一个示例格式：
+#### 模块管理
+| 命令 | 参数 | 描述 | 示例 |
+|------|------|------|------|
+| `enable` | `<module>` | 激活模块 | `enable chatgpt` |
+| `disable` | `<module>` | 停用模块 | `disable weather` |
+| `list` | `[--module]` | 模块清单 | `list --module=payment` |
+| `update` | - | 更新索引 | `update` |
+| `upgrade` | `[--force]` | 升级模块 | `upgrade --force` |
+| `install` | `<module...>` | 安装模块 | `install translator analyzer` |
+| `uninstall` | `<module>` | 移除模块 | `uninstall old-module` |
+
+#### 源管理
+| 命令 | 参数 | 描述 | 示例 |
+|------|------|------|------|
+| `origin add` | `<url>` | 添加源 | `origin add https://example.com/source.json` |
+| `origin list` | - | 源列表 | `origin list` |
+| `origin del` | `<url>` | 删除源 | `origin del old-source` |
+
+---
+
+## 🌐 模块源
+
+### 官方源仓库
+
+#### 全功能源
+| 源名称 | 类型 | 协议 | 地址 |
+|--------|------|------|------|
+| *AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/map.json` |
+| SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/map.json` |
+| *r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/map.json` |
+
+#### 协议专用源
+| 源名称 | 类型 | 协议 | 地址 |
+|--------|------|------|------|
+| OneBot 协议源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/onebot.json` |
+| 云湖平台源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/yunhu.json` |
+
+### 自定义源
+
+**示例配置**：
 ```json
 {
   "name": "Custom-Origin",
@@ -74,26 +84,9 @@ pip install ErisPulse
 }
 ```
 
-#### 提供以下命令方便您快速添加源
-```bash
-# 添加云湖异步模块源
-python -m ErisPulse origin add https://sdkframe.anran.xyz/yunhu.json
+---
 
-# 添加OneBot协议异步模块源
-python -m ErisPulse origin add https://sdkframe.anran.xyz/onebot.json
-
-# 添加异步模块源
-python -m ErisPulse origin add https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json
-
-# 添加同步模块源
-python -m ErisPulse origin add https://runoneall.serv00.net/ryhsdk2/
-
-# 添加自定义模块源
-# python -m ErisPulse origin add https://example.com/modules/map.json - (map.json可省略，会自动搜索该位置)
-
-# 查看当前配置的模块源
-python -m ErisPulse origin list
-
-# 更新模块列表
-python -m ErisPulse update
-```
+## ⚠️ 注意事项
+1. 生产环境建议使用官方认证源
+2. 模块升级前请备份配置
+3. 异步/同步模块不可混用
