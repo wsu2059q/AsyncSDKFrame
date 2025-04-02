@@ -50,43 +50,73 @@ pip install ErisPulse --upgrade
 
 ---
 
-## 🌐 模块源
+## 🌐 模块源配置指南
 
 ### 官方源仓库
 
 #### 全功能源
 | 源名称 | 类型 | 协议 | 地址 |
 |--------|------|------|------|
-| *AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/` |
-| SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/` |
-| *r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/` |
+| AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/`
+| SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/`
+| r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/`
 
 #### 协议专用源
-| 源名称 | 类型 | 协议 | 地址 |
-|--------|------|------|------|
-| OneBot 协议源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/onebot.json` |
-| 云湖平台源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/yunhu.json` |
+| 源名称 | 类型 | 协议 | 地址 | 适用协议 |
+|--------|------|------|------|------|
+| OneBot 协议源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/onebot.json` | 专为OneBot协议优化 |
+| 云湖平台源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/yunhu.json` | 云湖平台专用模块 |
 
-### 自定义源
+### 自定义源配置
 
-**示例配置**：
+#### 基础配置
 ```json
 {
-  "name": "Custom-Origin",
-  "base": "https://example.com/modules",
+  "name": "源名称",
+  "base": "基础URL地址",
   "modules": {
-    "CustomModule": {
-      "path": "/CustomModule.zip",
-      "version": "1.0.0",
-      "description": "自定义模块示例",
-      "author": "YourName",
-      "dependencies": [],
-      "optional_dependencies": [],
-      "pip_dependencies": ["rich", "numpy>=1.22.0"]
+    "模块名": {
+      "path": "模块路径",
+      "version": "版本号",
+      "description": "模块描述",
+      "author": "作者"
     }
   }
 }
 ```
+
+#### 高级配置
+```json
+{
+  "dependencies": ["必需依赖模块"],
+  "optional_dependencies": [
+    "可选模块",
+    ["组依赖模块1", "组依赖模块2"]
+  ],
+  "pip_dependencies": ["Python依赖包"]
+}
+```
+
+#### 配置说明
+1. **组依赖规则**：
+   - 单独列出的模块是可选的
+   - 用数组包裹的模块组表示为一个整体（即：组依赖模块1+组依赖模块2 和 可选模块 存在一个便符合）
+
+2. **版本规范**：
+   - 遵循语义化版本控制（SemVer）
+   - 格式：主版本号.次版本号.修订号
+
+3. **路径规则**：
+   - 相对路径基于base URL
+   - 支持.zip格式压缩包
+
+#### 最佳实践
+1. 保持模块体积小于10MB
+2. 版本号每次更新递增
+3. 提供完整的依赖说明
+4. 测试所有依赖组合
+
+> 💡 提示：可以使用JSON验证工具检查配置格式是否正确
 
 ---
 
