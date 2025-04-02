@@ -81,7 +81,8 @@ pip install ErisPulse --upgrade
       "description": "自定义模块示例",
       "author": "YourName",
       "dependencies": [],
-      "optional_dependencies": []
+      "optional_dependencies": [],
+      "third_party_dependencies": ["rich", "numpy>=1.22.0"]
     }
   }
 }
