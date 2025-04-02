@@ -4,6 +4,11 @@
 
 ErisPulse 是一个模块化、可扩展的异步 Python SDK 框架，主要用于构建高效、可维护的机器人应用程序。
 
+## 通过以下命令安装 `ErisPulse`：
+
+```bash
+pip install ErisPulse
+
 ## 开发指南
 
 项目的模块化设计允许开发者通过实现符合规范的模块快速扩展功能。模块的结构和接口规范可以参考 [异步模块开发指南](https://github.com/wsu2059q/AsyncRyhBotPythonSDK2/blob/main/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md)。
@@ -31,11 +36,6 @@ ErisPulse/
 - **origin**: 管理模块源，添加、删除、更新模块源等方法在此处
 - **util**: 提供工具函数，拓扑排序、异步执行
 - **modules**: 功能模块目录
-
-## 使用说明
-
-1. 安装依赖：`pip install -r requirements.txt`
-2. 查看可用CLI命令：`python -m ErisPulse`
 
 ### CLI命令介绍
 
