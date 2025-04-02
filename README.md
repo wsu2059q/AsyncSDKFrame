@@ -82,7 +82,7 @@ pip install ErisPulse --upgrade
       "author": "YourName",
       "dependencies": [],
       "optional_dependencies": [],
-      "third_party_dependencies": ["rich", "numpy>=1.22.0"]
+      "pip_dependencies": ["rich", "numpy>=1.22.0"]
     }
   }
 }
