@@ -27,23 +27,26 @@ pip install ErisPulse --upgrade
 
 ### CLI 命令大全
 
-#### 模块管理
-| 命令 | 参数 | 描述 | 示例 |
-|------|------|------|------|
-| `enable` | `<module>` | 激活模块 | `enable chatgpt` |
-| `disable` | `<module>` | 停用模块 | `disable weather` |
-| `list` | `[--module]` | 模块清单 | `list --module=payment` |
-| `update` | - | 更新索引 | `update` |
-| `upgrade` | `[--force]` | 升级模块 | `upgrade --force` |
-| `install` | `<module...>` | 安装模块 | `install translator analyzer` |
-| `uninstall` | `<module>` | 移除模块 | `uninstall old-module` |
+#### 模块管理  
+**全局参数说明**：  
+`--init`：执行命令前先初始化模块状态 
+''
+| 命令       | 参数                      | 描述                                  | 示例                          |
+|------------|---------------------------|---------------------------------------|-------------------------------|
+| `enable`   | `<module> [--init]`       | 激活指定模块                          | `python -m ErisPulse enable chatgpt --init`       |
+| `disable`  | `<module> [--init]`       | 停用指定模块                          | `python -m ErisPulse disable weather`             |
+| `list`     | `[--module=<name>] [--init]` | 列出模块（可筛选）                   | `python -m ErisPulse list --module=payment`       |
+| `update`   | -                         | 更新模块索引                           | `python -m ErisPulse update`                      |
+| `upgrade`  | `[--force] [--init]`      | 升级模块（`--force` 强制覆盖）        | `python -m ErisPulse upgrade --force --init`      |
+| `install`  | `<module...> [--init]`    | 安装一个或多个模块（逗号分隔）        | `python -m ErisPulse install translator,analyzer` |
+| `uninstall`| `<module> [--init]`       | 移除指定模块                          | `python -m ErisPulse uninstall old-module --init` |
 
 #### 源管理
 | 命令 | 参数 | 描述 | 示例 |
 |------|------|------|------|
-| `origin add` | `<url>` | 添加源 | `origin add https://example.com/source.json` |
-| `origin list` | - | 源列表 | `origin list` |
-| `origin del` | `<url>` | 删除源 | `origin del old-source` |
+| `origin add` | `<url>` | 添加源 | `python -m ErisPulse origin add https://example.com/source.json` |
+| `origin list` | - | 源列表 | `python -m ErisPulse origin list` |
+| `origin del` | `<url>` | 删除源 | `python -m ErisPulse origin del https://example.com/source.json` |
 
 ---
 
@@ -54,9 +57,9 @@ pip install ErisPulse --upgrade
 #### 全功能源
 | 源名称 | 类型 | 协议 | 地址 |
 |--------|------|------|------|
-| *AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/map.json` |
-| SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/map.json` |
-| *r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/map.json` |
+| *AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/` |
+| SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/` |
+| *r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/` |
 
 #### 协议专用源
 | 源名称 | 类型 | 协议 | 地址 |
