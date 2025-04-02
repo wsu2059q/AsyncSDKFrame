@@ -43,20 +43,17 @@ pip install ErisPulse
 
 在使用 `ErisPulse` 时，模块源是管理模块的重要组成部分。根据不同的使用场景，模块源分为两种类型：**异步模块源** 和 **同步模块源**。以下是它们的详细说明：
 
-#### 异步模块源
-- URL 1: [https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json](https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json)
-- URL 2: [https://sdkframe.anran.xyz/map.json](https://sdkframe.anran.xyz/map.json)
-- 特性：
-  - 支持异步加载模块。
-  - 适用于需要高性能和非阻塞操作的场景。
-  - 推荐用于现代异步框架和应用。
+#### 官方模块源
 
-#### 同步模块源
-- URL: [https://runoneall.serv00.net/ryhsdk2/map.json](https://runoneall.serv00.net/ryhsdk2/map.json)
-- 特性：
-  - 传统同步加载模块。
-  - 适用于兼容性要求较高的场景。
-  - 可能会在某些高并发场景下表现不如异步源。
+##### 包含所有模块的源
+- URL 1: (异步模块源) https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json
+- URL 2: (异步模块源) https://sdkframe.anran.xyz/map.json
+- URL 3: (同步模块源) https://runoneall.serv00.net/ryhsdk2/map.json
+
+##### 仅包含需要平台的源
+
+- URL 1: (OneBot协议/异步模块源) https://sdkframe.anran.xyz/onebot.json
+- URL 2: (云 湖 平 台/异步模块源) https://sdkframe.anran.xyz/yunhu.json
 
 #### 自定义模块源
 用户可以搭建自己的模块源，以下是一个示例格式：
@@ -79,13 +76,20 @@ pip install ErisPulse
 
 #### 提供以下命令方便您快速添加源
 ```bash
+# 添加云湖异步模块源
+python -m ErisPulse origin add https://sdkframe.anran.xyz/yunhu.json
+
+# 添加OneBot协议异步模块源
+python -m ErisPulse origin add https://sdkframe.anran.xyz/onebot.json
+
 # 添加异步模块源
-python -m ErisPulse origin add https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/
+python -m ErisPulse origin add https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json
+
 # 添加同步模块源
 python -m ErisPulse origin add https://runoneall.serv00.net/ryhsdk2/
 
 # 添加自定义模块源
-# python -m ErisPulse origin add https://example.com/modules/map.json - (map.json可省略，会自动搜索该文件)
+# python -m ErisPulse origin add https://example.com/modules/map.json - (map.json可省略，会自动搜索该位置)
 
 # 查看当前配置的模块源
 python -m ErisPulse origin list
