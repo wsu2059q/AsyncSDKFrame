@@ -80,12 +80,12 @@ pip install ErisPulse
 #### 提供以下命令方便您快速添加源
 ```bash
 # 添加异步模块源
-python -m ErisPulse origin add https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/map.json
+python -m ErisPulse origin add https://github.com/wsu2059q/AsyncRBPS-Origin/raw/refs/heads/main/
 # 添加同步模块源
-python -m ErisPulse origin add https://runoneall.serv00.net/ryhsdk2/map.json
+python -m ErisPulse origin add https://runoneall.serv00.net/ryhsdk2/
 
 # 添加自定义模块源
-# python -m ErisPulse origin add https://example.com/modules/map.json
+# python -m ErisPulse origin add https://example.com/modules/map.json - (map.json可省略，会自动搜索该文件)
 
 # 查看当前配置的模块源
 python -m ErisPulse origin list
