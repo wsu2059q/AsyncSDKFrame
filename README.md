@@ -57,7 +57,7 @@ pip install ErisPulse --upgrade
 #### 全功能源
 | 源名称 | 类型 | 协议 | 地址 |
 |--------|------|------|------|
-| AsyncRBPS | 异步 | HTTPS | `https://github.com/wsu2059q/AsyncRBPS-Origin/raw/main/`
+| AsyncRBPS | 异步 | HTTPS | `https://raw.githubusercontent.com/wsu2059q/AsyncRBPS-Origin/refs/heads/main/map.json`
 | SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/`
 | r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/`
 
