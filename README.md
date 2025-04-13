@@ -33,20 +33,20 @@ pip install ErisPulse --upgrade
 ''
 | 命令       | 参数                      | 描述                                  | 示例                          |
 |------------|---------------------------|---------------------------------------|-------------------------------|
-| `enable`   | `<module> [--init]`       | 激活指定模块                          | `python -m ErisPulse enable chatgpt --init`       |
-| `disable`  | `<module> [--init]`       | 停用指定模块                          | `python -m ErisPulse disable weather`             |
-| `list`     | `[--module=<name>] [--init]` | 列出模块（可筛选）                   | `python -m ErisPulse list --module=payment`       |
-| `update`   | -                         | 更新模块索引                           | `python -m ErisPulse update`                      |
-| `upgrade`  | `[--force] [--init]`      | 升级模块（`--force` 强制覆盖）        | `python -m ErisPulse upgrade --force --init`      |
-| `install`  | `<module...> [--init]`    | 安装一个或多个模块（逗号分隔）        | `python -m ErisPulse install translator,analyzer` |
-| `uninstall`| `<module> [--init]`       | 移除指定模块                          | `python -m ErisPulse uninstall old-module --init` |
+| `enable`   | `<module> [--init]`       | 激活指定模块                          | `epsdk enable chatgpt --init`       |
+| `disable`  | `<module> [--init]`       | 停用指定模块                          | `epsdk disable weather`             |
+| `list`     | `[--module=<name>] [--init]` | 列出模块（可筛选）                   | `epsdk list --module=payment`       |
+| `update`   | -                         | 更新模块索引                           | `epsdk update`                      |
+| `upgrade`  | `[--force] [--init]`      | 升级模块（`--force` 强制覆盖）        | `epsdk upgrade --force --init`      |
+| `install`  | `<module...> [--init]`    | 安装一个或多个模块（逗号分隔）        | `epsdk install translator,analyzer` |
+| `uninstall`| `<module> [--init]`       | 移除指定模块                          | `epsdk uninstall old-module --init` |
 
 #### 源管理
 | 命令 | 参数 | 描述 | 示例 |
 |------|------|------|------|
-| `origin add` | `<url>` | 添加源 | `python -m ErisPulse origin add https://example.com/source.json` |
-| `origin list` | - | 源列表 | `python -m ErisPulse origin list` |
-| `origin del` | `<url>` | 删除源 | `python -m ErisPulse origin del https://example.com/source.json` |
+| `origin add` | `<url>` | 添加源 | `epsdk origin add https://example.com/source.json` |
+| `origin list` | - | 源列表 | `epsdk origin list` |
+| `origin del` | `<url>` | 删除源 | `epsdk origin del https://example.com/source.json` |
 
 ---
 
