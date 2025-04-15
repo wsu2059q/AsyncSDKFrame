@@ -61,12 +61,6 @@ pip install ErisPulse --upgrade
 | SDKFrame CDN | 异步 | HTTPS | `https://sdkframe.anran.xyz/`
 | r1a 同步 | 同步 | HTTPS | `https://runoneall.serv00.net/ryhsdk2/`
 
-#### 协议专用源
-| 源名称 | 类型 | 协议 | 地址 | 适用协议 |
-|--------|------|------|------|------|
-| OneBot 协议源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/onebot.json` | 专为OneBot协议优化 |
-| 云湖平台源 | 异步 | HTTPS | `https://sdkframe.anran.xyz/yunhu.json` | 云湖平台专用模块 |
-
 ### 自定义源配置
 
 #### 基础配置
